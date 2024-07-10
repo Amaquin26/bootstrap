@@ -1,0 +1,57 @@
+// SQLite3 basic commands
+sqlite3 <database_name>.db
+.exit
+.databases
+.help
+
+// Create a table
+CREATE TABLE table_name (
+    column1 datatype PRIMARY KEY,
+    column2 datatype,
+    column3 datatype
+);
+
+// DROP TABLE
+DROP TABLE IF EXISTS table_name;
+
+// Common table commands
+.tables
+
+.schema table_name
+
+.PRAGMA table_info(<table_name>)
+
+// Create an index
+CREATE INDEX index_name ON table_name (column_name);
+
+// DROP and View index
+DROP INDEX IF EXISTS index_name;
+.indexes
+
+// Common database transaction syntax
+INSERT INTO table_name (column1, column2) VALUES (value1, value2);
+INSERT INTO table_name (column1, column2) VALUES (value1, value2), (value3, value4);
+UPDATE table_name SET column1 = value1, column2 = value2 WHERE condition;
+DELETE FROM table_name WHERE condition;
+DELETE FROM table_name;
+SELECT column1, column2 FROM table_name;
+SELECT * FROM table_name WHERE condition;
+SELECT * FROM table_name ORDER BY column1 ASC|DESC;
+SELECT * FROM table_name LIMIT number;
+SELECT COUNT(*) FROM table_name;
+SELECT SUM(column_name) FROM table_name;
+SELECT AVG(column_name) FROM table_name;
+
+SELECT a.column1, b.column2
+FROM table1 a
+INNER JOIN table2 b ON a.common_column = b.common_column;
+
+// Common Data types
+INTEGER
+REAL
+TEXT
+BLOB
+
+// Foreign keys and Primary Key
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+FOREIGN KEY (column_name) REFERENCES <table>(<column_name>)
