@@ -1,0 +1,40 @@
+sqlite3 database_name.db
+
+.tables
+
+.schema table_name
+
+.schema table_name
+
+CREATE TABLE users (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT NOT NULL,
+  age INTEGER,
+  email TEXT UNIQUE
+);
+
+
+ALTER TABLE table_name ADD COLUMN new_column_name column_type;
+
+CREATE INDEX index_name ON table_name (column_name);
+
+SELECT AVG(column_name), SUM(column_name), MIN(column_name), MAX(column_name) FROM table_name;
+
+//random js
+const randomNum = Math.floor(Math.random() * 10) + 1;
+
+//random php
+$randomNum = rand(1, 10);
+
+// fk
+CREATE TABLE employees (
+  id INTEGER PRIMARY KEY,
+  name TEXT NOT NULL,
+  department_id INTEGER,
+  FOREIGN KEY (department_id) REFERENCES departments(id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+
+INTEGER, REAL, BLOB, NULL, CHAR, TEXT
+
+
